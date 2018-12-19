@@ -11,10 +11,10 @@ export class SendMailService {
         this.sendGridMail.setApiKey(env.SENDGRID_API_KEY);
     }
 
-    public async setMailOpt = async (mailSetup: EmailAddress) => {  
-        mailSetup.
+    // public async setMailOpt = async (mailSetup: EmailAddress) => {  
+    //     mailSetup.
 
-    }
+    // }
 
     public async sendMail(message: MailData) {
         const { to, from, subject } = message;
