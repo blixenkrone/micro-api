@@ -1,0 +1,51 @@
+{
+  "name": "micro-api",
+  "version": "1.0.0",
+  "description": "NodeTS API",
+  "main": "dist/app.js",
+  "repository": "https://github.com/byblix/micro-api.git",
+  "author": "Simon Blixenkrone <sblixenkrone@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "npm": "6.4.1",
+    "node": "10.13.0",
+    "yarn": "1.12.3"
+  },
+  "scripts": {
+    "test": "jest src",
+    "build-ts": "tsc",
+    "postinstall": "yarn build-ts",
+    "start": "node ./dist/app.js",
+    "dev": "ts-node ./src/app.ts",
+    "prod": "ts-node ./src/app.ts",
+    "prod-js": "nodemon ./dist/app.js",
+    "serve-dev": "nodemon ./dist/app.js",
+    "build–dev": "node ./dist/app.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
+    "@types/jest": "^23.3.10",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "firebase-admin": "^6.3.0",
+    "jest": "^23.6.0",
+    "ts-jest": "^23.10.5"
+  },
+  "devDependencies": {
+    "@firebase/app-types": "^0.3.2",
+    "@types/axios": "^0.14.0",
+    "@types/body-parser": "^1.17.0",
+    "@types/cors": "^2.8.4",
+    "@types/dotenv": "^6.1.0",
+    "@types/express": "^4.16.0",
+    "@types/lodash": "^4.14.119",
+    "@types/node": "^10.12.12",
+    "dotenv": "^6.2.0",
+    "express-sslify": "^1.2.0",
+    "lodash": "^4.17.11",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.2.2"
+  }
+}
