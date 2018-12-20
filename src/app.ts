@@ -2,7 +2,7 @@ import express from 'express';
 import path from 'path';
 import { MailController, UsersController } from './controllers/controllers-index';
 import bodyparser from 'body-parser';
-// import cors from 'cors';
+import cors from 'cors';
 // import * as epx from 'express-sslify';
 
 class App {
@@ -23,6 +23,7 @@ class App {
         this.app.use(express.static(path.join(__dirname, 'dist')))
         this.app.use(bodyparser.urlencoded({ extended: true }))
         this.app.use(bodyparser.json())
+        this.app.use(cors())
         this.app.listen(this.port, () => console.log(`Listening on the port ${this.port}`));
 
     }
