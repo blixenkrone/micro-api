@@ -28,7 +28,7 @@ class App {
     }
     private initEndpoints = () => {
         this.app.get('/', (req, res) => res.send('Tipper API'))
-        this.app.post('/v1/send/mail/:userId', this.mailController.sendMail);
+        this.app.post('/v1/send/mail', this.mailController.sendMail);
         this.app.get('/v1/users/', this.usersController.getUsers);
         console.log('App index file ran');
     }
