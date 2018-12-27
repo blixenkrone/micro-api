@@ -16,7 +16,7 @@ export class UsersService {
     }
 
     private handleError<T extends Error>(e: T): T {
-        console.log(e)
+        // console.log(e)
         return e;
     }
 

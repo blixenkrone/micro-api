@@ -8,12 +8,13 @@ const usersSrv = new UsersService();
 export class UsersController {
 
     public getUsers = async (req: Request, res: Response, next: NextFunction) => {
-        const { query } = req;
         try {
+            const { query } = req;
             const profiles = await this.getUserByType('admindev@byrd.news', 'Sbk11!', query);
             res.json({ profiles });
             console.log('Fetched profiles!')
         } catch (error) {
+            console.log(error)
             res.json({ error })
         }
         next();
@@ -22,8 +23,8 @@ export class UsersController {
     private getUserByType = async (email: string, password: string, query: string): Promise<IUserData> => {
         try {
             const token = await tokenSrv.getToken(email, password);
-            const res = await usersSrv.getUsers({ params: query, headers: token })
-            return res.hits as IUserData;
+            const users = await usersSrv.getUsers({ params: query, headers: token })
+            return users.hits as IUserData;
         } catch (error) {
             return error;
         }
