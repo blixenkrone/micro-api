@@ -24,14 +24,11 @@
   },
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
-    "@types/jest": "^23.3.10",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "cors": "^2.8.5",
     "express": "^4.16.4",
-    "firebase-admin": "^6.3.0",
-    "jest": "^23.6.0",
-    "ts-jest": "^23.10.5"
+    "firebase-admin": "^6.3.0"
   },
   "devDependencies": {
     "@firebase/app-types": "^0.3.2",
@@ -40,11 +37,14 @@
     "@types/cors": "^2.8.4",
     "@types/dotenv": "^6.1.0",
     "@types/express": "^4.16.0",
+    "@types/jest": "^23.3.10",
     "@types/lodash": "^4.14.119",
     "@types/node": "^10.12.12",
     "dotenv": "^6.2.0",
     "express-sslify": "^1.2.0",
+    "jest": "^23.6.0",
     "lodash": "^4.17.11",
+    "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2"
   }
