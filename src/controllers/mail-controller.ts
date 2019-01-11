@@ -12,7 +12,10 @@ export class MailController {
         try {
             const sentMail = await mailSrv.sendMail(isMultiple);
             console.log(`Sent mail to ${to} from ${from}!`);
-            res.json({ mailBody })
+            res.json({
+                statusCode: 2000,
+                mailBody,
+            })
         } catch (error) {
             console.log(error);
             res.json({ error });
