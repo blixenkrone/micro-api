@@ -14,17 +14,23 @@ export class UsersController {
             res.json({ profiles });
             console.log('Fetched profiles!')
         } catch (error) {
+            console.log('Error!')
             console.log(error)
-            res.json({ error })
+            // res.json({ error })
         }
         next();
     }
 
     private getUserByType = async (email: string, password: string, query: string): Promise<IUserData> => {
         try {
-            const token = await tokenSrv.getToken(email, password);
-            const users = await usersSrv.getUsers({ params: query, headers: token })
-            return users.hits as IUserData;
+            const res = await tokenSrv.getToken(email, password);
+            console.log(res)
+            if (res.status === 200) {
+                const users = await usersSrv.getUsers({ params: query, headers: res.data.token })
+                return users.hits as IUserData;
+            } else {
+                return res.request;
+            }
         } catch (error) {
             return error;
         }
